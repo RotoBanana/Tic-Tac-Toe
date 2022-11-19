@@ -4,7 +4,17 @@ import platform
 def clear():
        if platform.system() == "Windows": os.system('cls')
        if platform.system() == "Darwin" or platform.system() == "Linux": os.system('clear')
-
+              
+def main_menu():
+       while True:
+              clear()
+              user = input("Welcome to my Tic-Tac-Toe Game!\n\tPress 1 to Play!\n\tPress Q to quit!\n")
+              if user == "1":
+                     break
+              elif user == "q":
+                     quit()
+              else:
+                     continue
 
 lst = [["-", "-", "-",],
        ["-", "-", "-",],
@@ -102,5 +112,6 @@ def game():
                      clear()
                      board_printer()
                      print("Nobody Wins! It's a draw!\nRestart the program to start again")
-       
+   
+main_menu()
 game()
